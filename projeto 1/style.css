@@ -1,0 +1,54 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: content-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.black {
+    background-color: black;
+}
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+    height: 50px;
+    margin-left: auto;
+    align-items: center;
+    width: auto;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+    background-color: #6e8ae6;
+}
+
+header > img {
+    margin-right: auto;
+    height: 60px;
+    padding-left: 10px;
+    
+}
+
+#mudar-tema {
+    display: none;
+    
+}
+
+header > div {
+    display: inline;
+    padding-right: 40px;
+}
+
+ #pesq{
+     margin-right: auto;
+     text-align: center;
+}
+
+#mais-vendidos {
+    border-bottom: 2px solid black;
+}
+
+#card-1 > img {
+    margin-top: 10px;
+    margin-left: 10px;
+    border-radius: 50%;
+
+}
