@@ -6,7 +6,7 @@
 }
 
 .black {
-    background-color: rgba(0, 0, 0, 0.705);
+    background-color: rgba(0, 0, 0, 0.658);
 }
 
 /* cabecalho */
@@ -28,7 +28,7 @@ header {
     align-items: center;
     width: auto;
     border-bottom: 2px solid rgba(0, 0, 0, 0.5);
-    background-color: #6e8ae6;
+    background-color: #034657;
 }
 
 header > img {
@@ -76,7 +76,7 @@ header > div {
 }
 
 .price > a:hover {
-    color: blue;
+    color: rgb(255, 0, 0);
 }
 #card-1 > img {
     height: 70px;
@@ -122,12 +122,49 @@ header > div {
 
 /* main */
 
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    border-bottom: 2px solid black ;
+}
+
+
+
 .card-p {
+    width: 300px;
+    height: 200px;
     margin: 20px 20px;
     display: flex;
+   
+   
 }
 
 .card-p > img { 
     height: 200px;
+    
+    
+}
 
+.details > p {
+    width: 150px ;
+    align-self: baseline;
+    text-align: justify;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.details > .price {
+    align-items: end;
+    padding-left: 10px;
+    padding-top: 100px;
+
+    
+}
+
+
+footer {
+    width: auto;
+    height: auto;
+    background-color: #0584A3 ;
 }
