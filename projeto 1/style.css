@@ -6,7 +6,18 @@
 }
 
 .black {
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.705);
+}
+
+/* cabecalho */
+
+#sun {
+    display: none;
+    transition: 2.0s;
+}
+
+#moon {
+   
 }
 
 header {
@@ -38,17 +49,85 @@ header > div {
 }
 
  #pesq{
+    width: 120px;
      margin-right: auto;
      text-align: center;
 }
 
+/* items mais vendidos */
+
 #mais-vendidos {
+    display: flex;
+    flex-wrap: wrap;
     border-bottom: 2px solid black;
 }
 
+#cards{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px auto;
+
+}
+
+.price > a {
+    text-decoration: none;
+    color: black;
+    transition: 0.5s;
+}
+
+.price > a:hover {
+    color: blue;
+}
 #card-1 > img {
-    margin-top: 10px;
-    margin-left: 10px;
+    height: 70px;
     border-radius: 50%;
+    
+
+}
+
+#card-1 {
+    padding-left: 40px;
+    
+}
+
+/* Responsivo da parte header/ section + vendidos*/
+
+@media (max-width: 550px) {
+    #card-4 {
+        display: none;
+    }
+    
+    #card-5 {
+        display: none;
+    }
+}
+
+@media (max-width: 340px){
+    i{
+        display: none;
+    }
+    #card-3 {
+        display: none;
+    }
+
+    #card-1,#card-2 {
+         
+         padding-left: 10px;   
+    }
+
+    #card-2{
+        padding-left: 10px;
+    }
+}
+
+/* main */
+
+.card-p {
+    margin: 20px 20px;
+    display: flex;
+}
+
+.card-p > img { 
+    height: 200px;
 
 }
