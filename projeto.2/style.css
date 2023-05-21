@@ -18,9 +18,14 @@ nav {
     justify-content: space-between;
     align-items: center;
     width: auto;
+    height: 50px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.233);
     background-color: #382FF7;
    
+}
+
+#menu {
+    display: none;
 }
 
 nav > h1 {
@@ -39,6 +44,8 @@ nav > ul {
 }
 
 nav > ul li > a {
+    display: block;
+    padding: .5rem;
     text-decoration: none;
     color: #f3f4f5;
     transition: .5s;
@@ -67,7 +74,7 @@ nav > ul li > a:hover {
     height: auto;
     width: 300px;
     padding-top: 20px;
-    padding-left:  100px;
+    padding-left: 180px;
 }
 
 .text-ground > h2 {
@@ -104,6 +111,7 @@ nav > ul li > a:hover {
 .btn-via {
     display: inline-block;
     border-radius: 10rem;
+    border: none;
     color: #4f4f50;
     background-color: #30F4FF;
     padding: .75rem 1.25rem;
@@ -119,19 +127,91 @@ nav > ul li > a:hover {
     color: #f3f4f5;
 }
 
+@media (max-width: 1200px) {
+    .ground{
+        width: 350px;
+        height: 375px;
+        background-image: url(img/praia-fundo-500px.jpg);
+    }
+
+}
+
+@media (max-width: 700px){
+    .ground{
+        width: 300px;
+        height: 225px;
+        background-image: url(img/praia-fundo-300px.jpg);
+    }
+
+    .text-ground {
+        height: auto;
+        width: 300px;
+        padding-top: 20px;
+        padding-left:  100px;
+    }
+
+    #menu {
+        display: block;
+        background: none;
+        font-size: 1rem;
+        padding: .5rem 1rem;
+        border: none;
+        cursor: pointer;
+        text-transform: uppercase;
+        margin-right: 50px;
+        color: #f3f4f5;
+    }
+    nav > ul {
+        display: block;
+        position: absolute;
+        width: 100%;
+        top:40px;
+        left: 0px;
+        background-color: #382FF7;
+        height: 0;
+        transition: .5s;
+        z-index: 1000;
+        visibility: hidden;
+        overflow-y: hidden;
+    }
+    
+    #nav.active ul {
+
+        padding-top: 10px;
+        padding-left: 100px;
+        height: calc(100vh - 40px);
+        visibility: visible;
+        overflow-y: auto;
+    }
+
+    #nav.active > ul li > a {
+        padding: 1rem 0 ;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.137);
+
+    }
+   
+}
+
+/* Fim do header */
+
 main {
     background-color: #3B90F5;
     padding-top: 40px;
     padding-left: 100px;
+    border-bottom: 2px solid rgba(224, 224, 224, 0.219);
 }
 
 #container-main {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     gap: 80px;
+    width: auto;
+    
 }
 .cards {
      width: 300px;
+    
 }
 .cards > h3 {
      font-family: 'Times New Roman', Times, serif ;
@@ -146,4 +226,52 @@ main {
     padding-top: 10px;
     text-align: justify;
     color: #f3f4f565;
+}
+
+
+.price {
+     width: 300px;
+    margin-bottom: 30px;
+}
+
+.price > h2 {
+    color: #d1d1d3;
+    text-transform: uppercase;
+    padding-top: 1rem;
+
+}
+
+.price > p {
+    padding-top: 1rem;
+    color: #4f4f50;
+    text-align: justify;
+}
+
+@media (max-width: 1200px) {
+    #container-main{
+        grid-template-columns: 1fr 1fr;
+    }
+    
+
+}
+
+@media (max-width: 800px) {
+    #container-main {
+        grid-template-columns: 1fr;
+    }
+}
+
+footer {
+    padding-top: 40px;
+    text-align: center;
+    width: auto;
+    height: 100px;
+    background-color: #3B90F5;
+    padding-bottom: 40px;
+
+}
+
+footer > h2{
+    padding-top: 2rem;
+    padding-bottom: 10px;
 }
