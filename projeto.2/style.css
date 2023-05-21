@@ -1,0 +1,149 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+header {
+    background-color: #2A4EDE;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.13);
+    padding-bottom: 40px;
+}
+
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.233);
+    background-color: #382FF7;
+   
+}
+
+nav > h1 {
+    color: rgb(243, 244, 245);
+    padding-left: 100px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2.5rem;
+}
+
+nav > ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-right: 60px;
+    list-style: none;
+}
+
+nav > ul li > a {
+    text-decoration: none;
+    color: #f3f4f5;
+    transition: .5s;
+}
+
+nav > ul li > a:hover {
+    color: rgba(0, 0, 0, 0.644);
+}
+
+
+.container-ground {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.ground {
+    display: flex;
+    height: 525px;
+    width: 700px;
+    background-image: url(img/praia-fundo.jpg);
+    margin-top: 20px;
+    margin-left: 100px;
+}
+
+.text-ground {
+    height: auto;
+    width: 300px;
+    padding-top: 20px;
+    padding-left:  100px;
+}
+
+.text-ground > h2 {
+    font-family: 'Times New Roman', Times, serif ;
+    font-size: 2.5rem;
+    color: #f3f4f5;
+}
+.text-ground > p {
+    text-align: justify;
+    margin-top: 10px;
+    color: #f3f4f565;
+}
+
+.sell {
+    margin-top: 40px;
+}
+
+.sell > h2 {
+    font-family: 'Times New Roman', Times, serif ;
+    font-size: 2.0rem;
+    color: #f3f4f5;
+}
+
+.sell > p {
+    text-align: justify;
+    margin-top: 10px;
+    color: #f3f4f565;
+}
+
+.viajar {
+    margin-top: 30px ;
+}
+
+.btn-via {
+    display: inline-block;
+    border-radius: 10rem;
+    color: #4f4f50;
+    background-color: #30F4FF;
+    padding: .75rem 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: .15rem;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: .5s;
+}
+
+.btn-via:hover {
+    background-color: #3B90F5;
+    color: #f3f4f5;
+}
+
+main {
+    background-color: #3B90F5;
+    padding-top: 40px;
+    padding-left: 100px;
+}
+
+#container-main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 80px;
+}
+.cards {
+     width: 300px;
+}
+.cards > h3 {
+     font-family: 'Times New Roman', Times, serif ;
+     font-size: 1.5rem;
+     color: #ffffffbb;
+     padding-top: 10px;
+     text-align: center;
+
+}
+
+.cards > p {
+    padding-top: 10px;
+    text-align: justify;
+    color: #f3f4f565;
+}
