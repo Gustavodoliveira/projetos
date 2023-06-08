@@ -9,10 +9,17 @@
     <title>Constructor</title>
 </head>
 <body>
-    <header>
-       <nav>
-        <i class="bi bi-building"></i>
+    <header id="header-content">
+       <nav id="nav-bar">
+        <div>
+            <i class="bi bi-building"></i>
+            <h1>Constructor</h1>
+        </div>
+        <div>
+        <button id="menu">Menu</button>
+       </div>
         <ul>
+            
             <li><a href="/">Home</a></li>
             <li><a href="/">Shop</a></li>
             <li><a href="/">About</a></li>
@@ -20,5 +27,28 @@
 
        </nav>
     </header>
+    <main id="main-content">
+        <h2>Construa sua casa agora</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt distinctio dolore architecto ab aut maxime quo cupiditate dolorem totam accusantium consectetur facilis corrupti recusandae, exercitationem repudiandae error optio culpa vero?</p>
+        <div id="Slides">
+            <div id="slider-1">
+             
+               <picture>
+                       <source media="(max-width: 400px)" srcset="/css/imagens/header-img-300px.jpg">
+                       <source media="(max-width: 700px)" srcset="/css/imagens/header-img-400px.jpg">
+                     
+                   
+
+
+                 <img src="/css/imagens/header-img-600px.jpg" alt="reuniao de escritorio">
+               </picture>
+            </div>
+        </div>
+    </main>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <script src="/css/index.js"></script>
 </body>
 </html>
