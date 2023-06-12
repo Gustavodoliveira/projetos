@@ -3,12 +3,14 @@ body{
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1rem;
+    background-color: #8C8C8C;
 
 }
 
 /* estilos da nav-bar */
 
 header{
+    position: relative;
     height: 50px;
     width: 100%;   
     background-color: #595959;
@@ -31,6 +33,7 @@ nav > h1 {
 }
 nav > ul {
     display:  flex;
+    padding-top: 10px;
     gap: 50px;
     margin-right: 40px;
     list-style: none;
@@ -67,7 +70,6 @@ nav > ul li a:hover {
 
     #menu {
         display: block;
-      
         margin-left: 30px;
         margin-right: 80px;
         padding: 4px;
@@ -79,14 +81,14 @@ nav > ul li a:hover {
     }
 
     nav > h1 {
-        
+        padding-top: 10px;
         font-size: 1.2rem;
         margin-left: 20px;
     }
 
     nav.active ul {
-        width: 92.1%;
-        padding-top: 10px;
+        width: 100%;
+        padding-top: 30px;
         height: calc(100vh - 30px);
         visibility: visible;
         overflow-y: auto;
@@ -96,7 +98,7 @@ nav > ul li a:hover {
 
     nav.active ul li {
         
-        padding-top: 30px;
+        padding-top: 50px;
         padding-bottom: 10px;
         border-bottom: 2px solid rgba(0, 0, 0, 0.356);
     }
@@ -105,10 +107,10 @@ nav > ul li a:hover {
 /* estilos main e sections */
 
 main {
-    position: absolute;
+    position: static;
     width: 100%;
     background-color: #8C8C8C;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.295);
 }
 
 #section-header{
@@ -151,6 +153,7 @@ main {
 }
 
 .card-img > h4{
+    padding-top: 10px;
     border-bottom: 2px solid rgba(0, 0, 0, 0.404);
     text-align: center;
     padding-bottom: 10px;
@@ -158,7 +161,7 @@ main {
 }
 
 .card-img > h5 {
-   ;
+    padding-top: 10px;
     text-align: center;
     padding-bottom: 10px;
 }
@@ -174,5 +177,33 @@ main {
 }
 
 .img-service > img {
-    border-radius: 2rem 2rem 0 0;
+    width: 296px;
+    border-radius: 1.9rem 1.9rem 0 0;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.404);
+}
+
+footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height:  70px;
+    background-color: #8C8C8C;
+}
+
+footer ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    list-style: none;
+}
+
+footer ul li a {
+    padding: 3px;
+    font-size: 1.15rem;
+    color: #F2F2F2;
+    text-decoration: none;
+}
+
+footer h2 {
+    padding-right: 30px;
 }
