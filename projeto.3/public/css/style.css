@@ -115,6 +115,8 @@ main {
 
 #section-header{
     margin: 50px auto;
+    padding-bottom: 40px;
+    border-bottom: 2px solid  rgba(0, 0, 0, 0.295);
 }
 
 #section-header > h2 {
@@ -142,6 +144,13 @@ main {
     z-index: 1;
     position: absolute;
     width: 100%;
+    clip-path: circle(0% at 0 50%);
+}
+
+#imgs-header .slide.active{
+    clip-path: circle(150% at 0 50%);
+    transition: 2s;
+    transition-property: clip-path;
 }
 
 #imgs-header .slide img{
@@ -184,15 +193,19 @@ main {
 
 }
 
-#imgs-header .navigation .btn {
+#imgs-header .navigation .btn-img {
     
-    background-color: #030303b4;
+    background-color: #111111b4;
     width: 12px;
     height: 12px;
     margin: 10px;
     border-radius: 10rem;
     cursor: pointer;
 
+}
+
+#imgs-header .navigation .btn-img.active {
+    background-color: #2696e9;
 }
 
 @media (max-width: 820px) {
@@ -246,6 +259,7 @@ main {
 }
 
 #section-header > h3{
+    margin: 30px;
     color: #F2F2F2;
     text-align: center;
     text-transform: uppercase;
@@ -297,11 +311,38 @@ main {
     border-bottom: 2px solid rgba(0, 0, 0, 0.404);
 }
 
+
+.form-group > label {
+    padding-top: 20px;
+    margin-left: 50px;
+}
+
+.form-group > input {
+    margin-left: 50px;
+    max-width: 300px;
+}
+
+.form-group > textarea {
+    margin-left: 50px;
+    max-width: 400px;
+}
+
+form > button {
+    margin-top: 20px;
+    padding-top: 20px;
+    margin-left: 50px;
+    margin-bottom: 50px;
+}
+
+
+
+
 footer{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height:  70px;
+    margin-top: 100px;
+    height:  100px;
     background-color: #8C8C8C;
 }
 
@@ -321,4 +362,13 @@ footer ul li a {
 
 footer h2 {
     padding-right: 30px;
+}
+
+
+/*  register css*/
+
+.card {
+    border: none;
+    background-color: #8C8C8C;
+   
 }
