@@ -1,7 +1,10 @@
+require("dotenv").config();
 const express = require ("express");
 const bodyParser = require ("body-parser");
 const ejs = require("ejs");
 const mongoose = require("mongoose");
+const bcrypt = require("bcrypt");
+const saltRounds = 10;
 
 
 const app = express();
@@ -13,10 +16,13 @@ app.use(express.static("public"));
 
 mongoose.connect("mongodb://127.0.0.1:27017/userDB");
 
-const userSchema = {
+const userSchema = new mongoose.Schema({
     email: String,
     password: String
-};
+});
+
+
+
 
 const User = new mongoose.model("User", userSchema);
 
@@ -34,29 +40,56 @@ app.get("/register", function(req, res){
 });
 
 app.post("/register", function(req, res){
-    const newUser = new User({
+
+    bcrypt.hash(req.body.password, saltRounds, function(err, hash) {
+          const newUser = new User({
         email: req.body.username,
-        password: req.body.password
+        password: hash
     });
 
     newUser.save();
     res.render("home")
+    });
+
+
+  
 })
 
 app.get("/login", function(req, res){
     res.render("login");
 });
 
-app.post("/login", function(req, res){
-    const username = req.body.username;
-    const password = req.body.password;
 
-   if (User.findOne({email: username, password: password})) {
-    res.render("home")
-   } else {
-    console.log();
-   }
-})
+// autenticaçao de login
+app.post("/login", async(req, res) => {
+
+    const loginservice = (email) => User.findOne({email: email});
+
+    const email = req.body.username;
+    const password = req.body.password;
+    try {
+        const user = await loginservice(email);
+
+        const passwordIsValid = bcrypt.compareSync(password, user.password);
+
+    
+
+        if (passwordIsValid === true) {
+            res.render("home");
+        } else {
+            res.redirect("register");
+        };
+       
+
+    } catch (error) {
+        console.log(err);
+    };
+
+    
+    
+   
+ 
+});
 
 app.get("/about", function(req, res){
     res.render("about");
