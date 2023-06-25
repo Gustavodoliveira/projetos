@@ -1,3 +1,29 @@
-h1 {
-    color: aqua;
+header  {
+    background-color: #262626cc;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav > ul {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+    margin-right: 30px;
+}
+
+nav ul li a {
+    color: #F2F2F2;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: .6s;
+}
+
+nav ul li a:hover {
+    background-color: #f2f2f24b;
+    color: #17d368;
 }
