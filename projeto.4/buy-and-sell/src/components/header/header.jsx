@@ -30,14 +30,13 @@ function Header () {
         <header>
            <nav className={className}>
            <img src= {logo} alt="" />
-            <ul  >
+           <button  onClick= {menu}><AiOutlineMenu /></button>
+            <ul>
                 <li><a href="#">Produtos</a></li>
                 <li><a href="#">Login</a></li>
                 <li><a href="#">Register</a></li>
-                <li><a href="#">Contatos</a></li>
                 <li><a href="#">Sobre</a></li>
             </ul>
-            <button  onClick= {menu}><AiOutlineMenu /></button>
            </nav>
         </header>
     )
