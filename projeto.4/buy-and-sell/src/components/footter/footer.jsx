@@ -7,19 +7,22 @@ import { AiOutlineMail } from "react-icons/ai";
 function Footer () {
     return (
         <footer>
-           <div class="contacts">
+           <div className="contacts">
                 <h3>Contacts</h3>
                <a href="#"> 
                   <h3><AiFillFacebook/> </h3>         
-                </a>   
+                </a> <span>Facebook</span>  
                 <a href="#">         
                    <h3><AiFillGithub/> </h3>        
-                </a> 
+                </a> <span>Github</span>
                 <a href="#"> 
                   <h3><AiOutlineMail/> </h3>         
-                </a>         
+                </a>  <span>Email</span>       
            </div>
-
+           <div className="email">
+               <h4>App@email.com </h4>
+               <span>2023</span>
+           </div>
         </footer>
     )
 };
