@@ -1,8 +1,33 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import App from './App';
 
-ReactDOM.render(<App />, 
-document.getElementById("head")
-);
+import { createBrowserRouter, RouterProvider, Route } from 'react-router-dom';
+
+//pag
+
+import Home from './routes/Home';
+import Produtos from './routes/Produtos';
+const  router = createBrowserRouter ([
+    {
+        element: <App />,
+        children: [
+            {
+                path: "/",
+                element: <Home />
+
+            },
+            {
+                path: "/produtos",
+                element: <Produtos />
+            }
+        ]
+    }
+])
+
+ReactDOM.createRoot(document.getElementById("head")).render(
+    <React.StrictMode>
+      <RouterProvider router={router} />
+    </React.StrictMode>
+)
 

@@ -1,5 +1,6 @@
 import "./header.css";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import Logo from "./logo.png"
 import {BiMenu} from "react-icons/bi";
 import {AiOutlineMenu} from "react-icons/ai"
@@ -29,13 +30,14 @@ function Header () {
     return (
         <header>
            <nav className={className}>
-           <img src= {logo} alt="" />
+           <Link to={"/"}><img src= {logo} alt="" /></Link>
+           
            <button  onClick= {menu}><AiOutlineMenu /></button>
             <ul>
-                <li><a href="#">Produtos</a></li>
-                <li><a href="#">Login</a></li>
-                <li><a href="#">Register</a></li>
-                <li><a href="#">Sobre</a></li>
+                <li><Link to={"/produtos"}>Produtos</Link></li>
+                <li><Link>Login</Link></li>
+                <li><Link>Register</Link></li>
+                <li><Link>Sobre</Link></li>
             </ul>
            </nav>
         </header>
