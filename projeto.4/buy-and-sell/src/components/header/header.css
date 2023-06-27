@@ -1,9 +1,16 @@
 header {
     position: relative;
     width: 100%;
-    height: auto;
-    background-color: #262626;
+    height: 100vh;
+    background-size: cover;
+    background-image: linear-gradient(to right bottom, rgba(12, 12, 12, 0.5), rgba(38, 38, 38, 0.685)
+    ),
+    url(./bg.jpg);
+    background-position: top;
+    clip-path: polygon(0 0, 100% 0,100% 75vh,0 100%  );
 }
+
+
 
 nav button {
     display: none;
@@ -15,6 +22,7 @@ nav {
     align-items: center;
 
 }
+
 
 nav ul {
     display: flex;
@@ -41,22 +49,27 @@ nav ul li a:hover {
     nav ul {
         display: block;
         position: absolute;
+        margin-top: 17px;
         width: 100%;
-        top: 60px;
-        left: 0;
-        height: calc(100vh - 50px);
+        top: 50px;
+        height: calc(100vh - 67px);
         visibility: hidden;
-        overflow-x: hidden;
-        transition: .4s;
+        overflow-y: hidden;
         text-align: center;
+        z-index: 1000;
     }
 
-    nav.active ul {
-        
+     header nav.active {
+        background-color:   hsla(0, 4%, 5%, 0.5) ;
+     }
+
+    header nav.active ul {
+        display: block;
         padding-top: 20px;
-        background-color: #262626;
+        background-color: hsla(0, 4%, 5%, 0.5);
         visibility: visible;
-        overflow-x: auto;
+        overflow-y: auto;
+        transition: all .4s;
     }
 
     nav.active ul li {
@@ -70,13 +83,13 @@ nav ul li a:hover {
         margin-right: 20px;
         padding: 10px;
         border: none;
-        background-color: #262626;
+        background-color: hsla(0, 4%, 5%, 0.425);
         color: #16F275;
         border-radius: 10px;
         transition: all .5s;
     }
     nav button:hover{
-        background-color: #00000049
+        background-color: #00000049;
     }
 }
 
