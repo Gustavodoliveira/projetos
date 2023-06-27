@@ -8,6 +8,10 @@ import { createBrowserRouter, RouterProvider, Route } from 'react-router-dom';
 
 import Home from './routes/Home';
 import Produtos from './routes/Produtos';
+import Login from './routes/Login';
+import Register from './routes/Register';
+import Sobre from './routes/Sobre';
+
 const  router = createBrowserRouter ([
     {
         element: <App />,
@@ -20,6 +24,18 @@ const  router = createBrowserRouter ([
             {
                 path: "/produtos",
                 element: <Produtos />
+            },
+            {
+                path: "/login",
+                element: <Login />
+            },
+            {
+                path: "/register",
+                element: <Register/>
+            },
+            {
+                path: "/sobre",
+                element: <Sobre />
             }
         ]
     }
