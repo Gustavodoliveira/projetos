@@ -5,7 +5,8 @@ import Footer from '../components/footter/footer'
 const Produtos = () => {
   return (
     <div>
-    <Header />
+    <Header
+    title="Produtos" />
     <div>Produtos</div>
     <Footer />
     </div>

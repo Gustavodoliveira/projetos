@@ -5,7 +5,10 @@ import Header from '../components/header/header'
 const Sobre = () => {
   return (
     <div>
-    <Header />
+    <Header
+     title="Sobre" 
+      
+     />
     <div>Sobre</div>
     <Footer />
     </div>

@@ -5,7 +5,9 @@ import Footer from '../components/footter/footer'
 const Register = () => {
   return (
     <div>
-    <Header/>
+    <Header 
+      title="Register"
+    />
     <div>Register</div>
     <Footer />
     </div>
