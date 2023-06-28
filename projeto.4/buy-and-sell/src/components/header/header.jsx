@@ -1,7 +1,7 @@
 import "./header.css";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Logo from "./logo.png"
+import Logo from "../../assets/logo.png"
 import {AiOutlineMenu} from "react-icons/ai"
 
 const logo = Logo;
