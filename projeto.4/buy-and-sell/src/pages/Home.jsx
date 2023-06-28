@@ -2,17 +2,19 @@ import React from 'react'
 import Header from '../components/header/header'
 import Footer from '../components/footter/footer'
 
-const Login = () => {
+
+const homePage = () => {
   return (
     <div>
-    <Header 
-      title= "Login"
+    <Header
+    title= "Seu negocio"
+    content= "Nos o ajudamos em seu negocio online"
+    text_btn= "COMEÇAR"
     />
-    <div>Login</div>
+    
     <Footer />
     </div>
   )
 }
 
-export default Login;
-
+export default homePage;

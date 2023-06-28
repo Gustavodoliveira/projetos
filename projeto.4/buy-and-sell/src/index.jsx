@@ -10,7 +10,7 @@ import Home from './routes/Home';
 import Produtos from './routes/Produtos';
 import Login from './routes/Login';
 import Register from './routes/Register';
-import Sobre from './routes/Sobre';
+import Sobre from './routes/sobre';
 
 const  router = createBrowserRouter ([
     {
@@ -24,19 +24,19 @@ const  router = createBrowserRouter ([
             {
                 path: "/produtos",
                 element: <Produtos />
-            },
+            }, 
             {
                 path: "/login",
                 element: <Login />
             },
-            {
+           {
                 path: "/register",
                 element: <Register/>
             },
             {
-                path: "/sobre",
-                element: <Sobre />
-            }
+               path: "/sobre",
+             element: <Sobre />
+            } 
         ]
     }
 ])
@@ -46,4 +46,5 @@ ReactDOM.createRoot(document.getElementById("head")).render(
       <RouterProvider router={router} />
     </React.StrictMode>
 )
+
 
