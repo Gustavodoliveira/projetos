@@ -31,13 +31,15 @@ nav ul {
 }
 
 nav ul li a{
-    padding: 10px;
-    margin-right: 10px;
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 1rem;
+    margin-right: 1rem;
     font-weight: 100;
     text-transform: uppercase;
     text-decoration: none;
     color: #f2f2f2;
-    border-radius: 10px;
+    border-radius: 1rem;
 }
 
 nav ul li a:hover {
@@ -49,10 +51,10 @@ nav ul li a:hover {
     nav ul {
         display: block;
         position: absolute;
-        margin-top: 17px;
+        margin-top: 1.5rem;
         width: 100%;
-        top: 50px;
-        height: calc(100vh - 67px);
+        top: 5rem;
+        height: calc(100vh - 5rem);
         visibility: hidden;
         overflow-y: hidden;
         text-align: center;
@@ -65,7 +67,7 @@ nav ul li a:hover {
 
     header nav.active ul {
         display: block;
-        padding-top: 20px;
+        padding-top: 2rem;
         background-color: hsla(0, 4%, 5%, 0.5);
         visibility: visible;
         overflow-y: auto;
@@ -73,19 +75,19 @@ nav ul li a:hover {
     }
 
     nav.active ul li {
-        padding-bottom: 20px;
-        margin-bottom: 40px;
+        padding-bottom: 2rem;
+        margin-bottom: 4rem;
         border-bottom: 2px solid rgba(58, 58, 58, 0.651);
     }
 
     nav button {
         display: block;
-        margin-right: 20px;
-        padding: 10px;
+        margin-right: 2rem;
+        padding: 1rem;
         border: none;
         background-color: hsla(0, 4%, 5%, 0.425);
         color: #16F275;
-        border-radius: 10px;
+        border-radius: 1rem;
         transition: all .5s;
     }
     nav button:hover{
@@ -93,4 +95,24 @@ nav ul li a:hover {
     }
 }
 
+.header__text-block {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #f2f2f2;
+    
+}
 
+.header__text-title{
+    display: block;
+    font-size: 3rem;
+    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: .25rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.header__text-content{
+    display: block;
+}

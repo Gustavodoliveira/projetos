@@ -11,7 +11,7 @@ const menu = BiMenu
 
 
 
-function Header () {
+function Header (props) {
 
     const [className, setClassName] = useState("")
 
@@ -40,7 +40,10 @@ function Header () {
                 <li><Link to={"/sobre"}>Sobre</Link></li>
             </ul>
            </nav>
-           
+           <div className="header__text-block">
+            <span className="header__text-title">{props.title} </span>
+            <span className="header__text-content"> {props.content}</span>
+           </div>
         </header>
     )
 }
