@@ -42,6 +42,11 @@ nav ul li a{
     border-radius: 1rem;
 }
 
+nav ul li.active {
+    color: #16F275;
+    background-color: #00000049;
+}
+
 nav ul li a:hover {
     color: #16F275;
     background-color: #00000049;
@@ -113,6 +118,9 @@ nav ul li a:hover {
     letter-spacing: .25rem;
     font-weight: 600;
     text-transform: uppercase;
+    backface-visibility: hidden;
+    animation: moveInRight 1s ease-in .1s;
+    
 }
 
 .header__text-content{
@@ -120,9 +128,60 @@ nav ul li a:hover {
     padding-top: 1rem;
     font-size: 1.8rem;
     text-align: center;
+    animation: moveInLeft 1s ease-in .1s;
 }
 
+@keyframes moveInRight {
+    0%{
+        opacity: 0;
+        transform: translateX(-200px);
+    }
 
+    70%{
+        transform: translateX(3px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes moveInBottom{
+    0%{
+        opacity: 0;
+        transform: translateY(200px);
+    }
+
+    70%{
+        transform: translateY(-3px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes moveInLeft {
+    0%{
+        opacity: 0;
+        transform: translateX(200px);
+    }
+
+    70%{
+        transform: translateX(-3px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.header__btn{
+    animation: moveInBottom 1s ease-in .1s;
+}
 
 .btn {
     display: inline-block;
