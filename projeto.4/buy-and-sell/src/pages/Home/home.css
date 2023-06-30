@@ -1,36 +1,90 @@
-.section-apresentation{
-    background-color:    #187070    ;
-    padding: 40rem 0;
-    margin-top: -25vh;
-    position: relative;
-   /* height: 50vh; */
-    text-align: center;
+
+section > h2 {
+    margin: 15rem 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 4rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
 }
 
-.section-apresentation h2 {
-    color: rgb(213, 216, 219);
-    font-size: 5rem;
-}
-
-.section__container{
+.section__Content{
     display: flex;
-    gap: 4rem;
-    margin-top: 8rem;
-}
-
-@media(max-width: 800px) {
-    .section__container{
-        flex-wrap: wrap;
-        flex-direction: column;
-    }
+    gap: 5rem;
+    height: auto;
 }
 
 .section__block-text{
-    font-size: 1.6rem;
-    color: aliceblue;
+    
+    margin: 4rem 0 0 4rem;
+    width: 50%;
 }
 
-.section__block-text-1 h3{
-    margin: 1rem;
+.section__block-text h3 {
+    font-size: 2rem;
+    color: rgba(31, 30, 30, 0.747);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.section__block-text p{
+    font-size: 1.5rem;
+    color: rgb(0, 0, 0);
+}
+
+.section__block-text-1{
+    margin-bottom: 4rem;
+}
+
+.composition__container{
+    height: 50%;
+    margin-top: 2rem;
+    position: relative;
+    width: 70%;
+}
+
+.composition__photo{
+    position: absolute;
+    width: 75%;
+    border-radius: 2rem;
+    box-shadow: 0 1rem 2rem black ;
+    transition: all .4s;
+    z-index: 10;
+}
+
+.compositon__photo--1{
+    top: -6rem;
+    left: 0;
+}
+
+.compositon__photo--2{
+    
+    top: 5rem;
+    right: 3rem;
+}
+
+.composition__photo:hover{
+    transform: scale(1.1);
+    z-index: 20;
+    box-shadow: 0 2rem 4rem black 
 
 }
+
+@media (max-width: 500px) {
+    .section__Content{
+        flex-direction: column;
+        clear: both;
+
+    }
+
+    .section__block-text{
+        justify-content: center;
+    }
+
+    .composition__container{
+        margin-left: auto;
+    }
+    
+}
+
+/* Features section */
