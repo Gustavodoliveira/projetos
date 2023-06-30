@@ -1,4 +1,4 @@
-import Page from "../pages/Login.jsx";
+import Page from "../pages/Login/Login.jsx";
 
 const Login = () => {
     return <Page />

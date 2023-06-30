@@ -1,5 +1,5 @@
 import React from "react";
-import Page from "../pages/Home.jsx";
+import Page from "../pages/Home/Home.jsx";
 
 
 

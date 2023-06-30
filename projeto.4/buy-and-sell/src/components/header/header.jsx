@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Logo from "../../assets/logo.png"
 import {AiOutlineMenu} from "react-icons/ai"
 
+
 const logo = Logo;
 
 
@@ -42,7 +43,7 @@ function Header (props) {
             <div className="text__container">
                 <span className="header__text-title">{props.title} </span>
                 <span className="header__text-content"> {props.content}</span>
-                <a href="#" className="header__btn btn">{props.text_btn}</a>
+                <a href={props.path} className='header__btn btn'>{props.text_btn}</a>
             </div>
         </header>
     )

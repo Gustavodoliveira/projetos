@@ -1,4 +1,4 @@
-import Page from "../pages/Sobre.jsx";
+import Page from "../pages/Sobre/Sobre.jsx";
 
 const Sobre = () => {
     return <Page />

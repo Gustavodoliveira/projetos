@@ -1,6 +1,6 @@
 import React from 'react'
-import Footer from '../components/footter/footer'
-import Header from '../components/header/header'
+import Footer from '../../components/footter/footer'
+import Header from '../../components/header/header'
 
 const Sobre = () => {
   return (
