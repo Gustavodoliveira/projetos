@@ -3,9 +3,12 @@ import Header from '../../components/header/header'
 import Footer from '../../components/footter/footer'
 import "./home.css"
 import "../../assets/css/utils.css"
-//import service1 from "../../assets/service.svg"
 import service2 from "../../assets/service-2.png"
 import service3 from "../../assets/service-3.png"
+import {BiWorld} from "react-icons/bi"
+
+
+
 
 
 const homePage = () => {
@@ -17,7 +20,7 @@ const homePage = () => {
     text_btn= "COMEÇAR"
     />
     <main>
-      <section>
+      <section className="section__main">
              <h2 className='u-center_text'>Crie seu negocio</h2>
                 <div class="section__Content">
                   <div className="section__block-text">
@@ -38,6 +41,42 @@ const homePage = () => {
                    </div>
                 </div>
       </section>
+ 
+      <section className="section__feature">
+        <h2 className='u-center_text'>Crie seu negocio</h2>
+            <div className="section__features-block">
+              <div className="card">
+                  <div className="card__icon">
+                    <p><BiWorld /></p>
+                  </div>
+                  <div className="card__heading">
+                      <h4>Venda seu produto</h4>
+                  </div>
+                  <div className="card__details">
+                      <ul>
+                        <li> Venda seu produto para o mundo todo</li>
+                        <li>Sem taxa</li>
+                      </ul>
+                  </div>
+              </div>
+              <div className="card">
+                  <div className="card__icon">
+                    <p><BiWorld /></p>
+                  </div>
+                  <div className="card__heading">
+                      <h4>Venda seu produto</h4>
+                  </div>
+                  <div className="card__details">
+                      <ul>
+                        <li> Venda seu produto para o mundo todo</li>
+                        <li>Sem taxa</li>
+                      </ul>
+                  </div>
+
+              </div>
+        </div>
+      </section>
+
     </main>
     
     <Footer />

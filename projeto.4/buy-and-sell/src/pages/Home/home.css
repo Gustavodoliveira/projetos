@@ -1,6 +1,9 @@
-
+.section__main{
+    margin-top: -20vh;
+    padding: 30rem 0;
+}
 section > h2 {
-    margin: 15rem 0;
+    
     font-family: 'Courier New', Courier, monospace;
     font-size: 4rem;
     font-weight: 500;
@@ -11,7 +14,8 @@ section > h2 {
 .section__Content{
     display: flex;
     gap: 5rem;
-    height: auto;
+    padding-top: 16rem;
+    margin-bottom: 15rem;
 }
 
 .section__block-text{
@@ -88,3 +92,41 @@ section > h2 {
 }
 
 /* Features section */
+
+.section__feature{
+    margin-top: -10rem;
+    transform:  skewY(-7deg); 
+}
+
+.section__feature > h2 {
+    transform:  skewY(7deg);
+}
+.section__features-block{
+    
+    display: flex;
+    gap: 6rem;
+    justify-content: center;
+    
+    
+    
+}
+
+.card {
+    background-color: aliceblue;
+    border-radius: .9rem;
+    width: 30rem;
+    height: 30rem;
+    transform:  skewY(7deg);
+}
+
+.card__icon{
+    color: #16cc65;
+    text-align: center;
+    font-size: 8rem;
+    margin: 1rem 0;
+    border-bottom: 2px solid black;
+}
+
+.card__heading{
+    font-size: 2rem;
+}
