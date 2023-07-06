@@ -6,23 +6,23 @@ const { Schema } = mongoose;
     new Schema({
         name: {
             type: String,
-            
+            required: true
         },
         price: {
             type: Number,
-            
+            required: true
         },
         stock: {
             type: Number,
-            
+            required: true
         },
         description: {
             type: String,
-            
+            required: true
         },
         image: {
             type: String,
-            
+            required: true
         },
         available: {
             type: Boolean
