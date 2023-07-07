@@ -1,10 +1,15 @@
 const createUserToken = require("../helpers/create-user-token")
 const User = require("../models/User")
 const bcrypt = require("bcrypt")
+const jwt = require("jsonwebtoken")
+
+//helpers
+
+const getToken = require("../helpers/get-token")
 
 module.exports = class UserController {
     static async register(req, res){
-       const {name, email, password, phone} = req.body
+       const {name, email, password, phone, cartao} = req.body
     
        //validations
 
@@ -59,8 +64,7 @@ module.exports = class UserController {
         name,
         email,
         password: passwordHash,
-        phone,
-
+        phone
        })
 
        try {
@@ -84,4 +88,74 @@ module.exports = class UserController {
 
 
     }
+
+    static async login(req, res) {
+        const {email, password} = req.body
+
+        if(!email) {
+            res.status(422).json({message: "o email e obrigatorio"})
+            return
+           }
+
+           if(!password) {
+            res.status(422).json({message: "A senha e obrigatoria "})
+            return
+           }   
+
+           
+           const user = await User.findOne({email: email})
+
+       if (!user) {
+        res.status(422).json({message: "Este email nao existe",})
+        return
+       }
+
+       
+       const checkPassword = await bcrypt.compare(password, user.password);
+
+       if(!checkPassword){
+        res.status(422).json({ message: "senha invalida"})
+        return
+       }
+
+       await createUserToken(user, req, res)
+    }
+
+    static async checkUser(req, res) {
+        let currentUser
+
+        if(req.headers.authorization) {
+
+            const token = getToken(req)
+            const decoded = jwt.verify(token, "secretlmn")
+
+            currentUser = await User.findById(decoded.id)
+
+            currentUser.password = undefined
+
+        } else {
+            currentUser = null
+        }
+
+        res.status(200).send(currentUser)
+    }
+
+    static async getUserbyId (req, res) {
+
+        const id = req.params.id
+
+        const user = await User.findById(id).select('-password')
+
+        if (!user) {
+            res.status(422).json({message: "Usuario nao encontardo"})
+            return
+           }
+
+        res.status(200).json({ user })   
+    }
+
+    static async editUser(req, res) {
+         
+    }
+
 }

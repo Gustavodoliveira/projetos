@@ -24,7 +24,7 @@ const User = mongoose.model(
         image: {
             type: String
         },
-        cartao:[{
+        cartao:{
             name:{
                 numero: String,
                 
@@ -37,7 +37,7 @@ const User = mongoose.model(
                 numero: String,
                
             }   
-        }]
+        },
     },
     {timestamps: true},
     ),
