@@ -62,7 +62,17 @@ module.exports = class ProductController {
         
     }
 
-   
+   static async checkProducts(req, res) {
+     
+    const token = getToken(req)
+    const decoded = jwt.verify(token, "secretlmn")
+
+    const products = await Product.findOne({id_user: decoded.id})
+
+    console.log(products);
+    
+
+   }
 
 
 }
