@@ -1,4 +1,4 @@
-const createUserToken = require("../helpers/create-user-token")
+
 const User = require("../models/User")
 const bcrypt = require("bcrypt")
 const jwt = require("jsonwebtoken")
@@ -7,6 +7,8 @@ const jwt = require("jsonwebtoken")
 
 const getToken = require("../helpers/get-token")
 const getUserByToken = require("../helpers/get-user-by-token")
+const createUserToken = require("../helpers/create-user-token")
+
 
 module.exports = class UserController {
     static async register(req, res){

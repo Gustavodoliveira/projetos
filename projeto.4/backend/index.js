@@ -14,8 +14,11 @@ app.use(cors({credentials: true, origin: "http://localhost:3000"}));
 
 
 const UserRoutes = require("./routes/UserRoutes")
+const ProductRoutes = require("./routes/ProductsRoutes")
 
 app.use("/", UserRoutes)
+
+app.use("/product", ProductRoutes)
 
 app.listen(port, () => {
    console.log("O servidor iniciou");

@@ -4,6 +4,12 @@ const { Schema } = mongoose;
  const Products = mongoose.model(
     'Products', 
     new Schema({
+        
+        id_user: {
+            type: String,
+            required: true
+        },
+
         name: {
             type: String,
             required: true
@@ -22,7 +28,7 @@ const { Schema } = mongoose;
         },
         image: {
             type: String,
-            required: true
+           // required: true
         },
         available: {
             type: Boolean
