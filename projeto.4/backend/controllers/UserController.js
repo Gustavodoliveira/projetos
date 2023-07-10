@@ -151,7 +151,7 @@ module.exports = class UserController {
     }
 
     static async editUser(req, res) {
-         const id = req.params.id
+         
 
         const token = getToken(req)
         const user =  await getUserByToken(token)         
@@ -224,7 +224,7 @@ module.exports = class UserController {
                 { $set: user },
                 { new: true },
             )
-                res.status(200).json({message: "usuario criado com sucesso"})
+                res.status(200).json({message: "usuario editado com sucesso"})
            } catch (error) {
             res.status(500).json({message: error})
             return
