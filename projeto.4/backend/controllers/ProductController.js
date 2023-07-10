@@ -81,8 +81,14 @@ module.exports = class ProductController {
         const idProduct = req.params.id 
 
         const token = getToken(req)
-        
-        // const user = await getUserByToken(token)
+
+        let img;
+
+        if(req.file) {
+            img = req.file.filename
+        }
+
+    //  const user = await getUserByToken(token)
         
         const product = await Product.findOne({_id: idProduct}).select("-id_user");
 
@@ -95,21 +101,41 @@ module.exports = class ProductController {
             return
         }
 
+        product.name = name
+
         if(!price) {
             res.status(422).json({message: "o preço é obrigatorio"})
             return
         }
+
+        product.price = price
 
         if(!stock) {
             res.status(422).json({message: "o estoque é obrigatorio"})
             return
         }
 
+        product.stock = stock
+
         if(!description){
             res.status(422).json({message: "A descrição e obrigatoria"})
             return
         }
 
+        product.description = description
+
+        try {
+            await Product.findOneAndUpdate(
+                {_id: idProduct},
+                {$set: product},
+                {new: true}
+            )
+
+            res.status(200).json({message: "Produto editado com sucesso"})
+
+        } catch (error) {
+            res.status(500).json({message: error});
+        }
 
    }
 
