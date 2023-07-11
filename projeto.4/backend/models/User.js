@@ -24,20 +24,7 @@ const User = mongoose.model(
         image: {
             type: String
         },
-        cartao: {
-            name:{
-                numero: String,
-                
-            },
-            numero:{
-                numero: String,
-                
-            },
-            cvc:{
-                numero: String,
-               
-            }   
-    },
+    carrinho: [],
     },
     {timestamps: true},
     ),

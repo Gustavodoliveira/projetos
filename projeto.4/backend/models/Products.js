@@ -5,9 +5,13 @@ const { Schema } = mongoose;
     'Products', 
     new Schema({
         
-        id_user: {
-            type: String,
+        user: {
+            name: String,
+            email: String,
+            phone: String,
+            image: String,
             required: true
+
         },
 
         name: {

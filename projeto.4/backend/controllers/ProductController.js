@@ -40,10 +40,10 @@ module.exports = class ProductController {
        
 
        try {
-         const user = await User.findById(decoded.id)
-         const id_user = user._id
+         const user = await User.findById(decoded.id).select("-password  -carrinho")
+        
          const product = new Product ({
-            id_user,
+            user,
             name, 
             price,
             stock, 
@@ -88,11 +88,20 @@ module.exports = class ProductController {
             img = req.file.filename
         }
 
-    //  const user = await getUserByToken(token)
-        
-        const product = await Product.findOne({_id: idProduct}).select("-id_user");
 
-        // console.log(product);
+         const user = await getUserByToken(token)
+         const IdUser = String(await user._id)
+         
+         const product = await Product.findOne({_id: idProduct})
+         const IdProduct = String(await product.user._id);
+
+        //Validação se id do usuario no produto bate com o id amazenado no token
+
+        if(IdUser !== IdProduct) {
+            res.status(401).json({message: "Token invalido"})
+           return
+        }
+
 
         const {name, price, stock, description } = req.body
 
@@ -140,6 +149,37 @@ module.exports = class ProductController {
    }
 
 
+    static async removeProduct(req, res) {
+        const id = req.params.id
+        const token = getToken(req)
+        let product = await Product.findOne({_id: id})
+
+        const user = await getUserByToken(token)
+        const IdUser = String(await user._id)
+        
+        
+        const IdProduct = String(await product.user._id);
+
+       //Validação se id do usuario no produto bate com o id amazenado no token
+       
+       if(IdUser !== IdProduct) {
+           res.status(401).json({message: "Token invalido"})
+          return
+       }
+
+        if(!product){
+            res.status(422).json({message: "ID invalido"})
+            return
+        }
+
+        try {
+            await Product.deleteOne({_id: id})
+            res.status(200).json({message: "Produto deletado com sucesso"})
+        } catch (error) {
+            
+        }
+        
+    }
 
 }
 

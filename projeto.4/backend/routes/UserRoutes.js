@@ -13,6 +13,7 @@ router.get("/:id", UserController.getUserbyId);
 
 // o middleware vai entre a rota e a funçao para vericar se a algum token
 router.patch("/edit/:id", checkToken, imageUpload.single("image"), UserController.editUser)
+router.patch("/carrinho", checkToken)
 
 
 
