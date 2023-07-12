@@ -4,6 +4,8 @@ const getToken = require("../helpers/get-token")
 const jwt = require("jsonwebtoken")
 const getUserByToken = require("../helpers/get-user-by-token")
 
+const verifyId = require("../helpers/verify-id")
+
 
 module.exports = class ProductController {
 
@@ -150,27 +152,29 @@ module.exports = class ProductController {
 
 
     static async removeProduct(req, res) {
-        const id = req.params.id
-        const token = getToken(req)
-        let product = await Product.findOne({_id: id})
 
-        const user = await getUserByToken(token)
-        const IdUser = String(await user._id)
+        const id = await verifyId(req,res)
+    //     const token = getToken(req)
+    //     let product = await Product.findOne({_id: id})
+
+    //     const user = await getUserByToken(token)
+    //     const IdUser = String(await user._id)
         
         
-        const IdProduct = String(await product.user._id);
+    //     const IdProduct = String(await product.user._id);
 
-       //Validação se id do usuario no produto bate com o id amazenado no token
+    //    //Validação se id do usuario no produto bate com o id amazenado no token
        
-       if(IdUser !== IdProduct) {
-           res.status(401).json({message: "Token invalido"})
-          return
-       }
+    //    if(IdUser !== IdProduct) {
+    //        res.status(401).json({message: "Token invalido"})
+    //       return
+    //    }
 
-        if(!product){
-            res.status(422).json({message: "ID invalido"})
-            return
-        }
+        // if(!product){
+        //     res.status(422).json({message: "ID invalido"})
+        //     return
+        // }
+
 
         try {
             await Product.deleteOne({_id: id})
