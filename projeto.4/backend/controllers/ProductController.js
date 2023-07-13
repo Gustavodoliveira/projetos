@@ -43,6 +43,7 @@ module.exports = class ProductController {
 
        try {
          const user = await User.findById(decoded.id).select("-password  -carrinho")
+         const idUser=  await User.findById(decoded.id)
         
          const product = new Product ({
             user,
@@ -80,30 +81,27 @@ module.exports = class ProductController {
 
    static async editProduct(req, res){
 
-        const idProduct = req.params.id 
+         
+            const id = req.params.id
 
-        const token = getToken(req)
+            const token =  getToken(req)
+            const user = await getUserByToken(token)
+            const product = await Product.findOne({_id: id})
+        
+            const IdUser = String(await user._id)
+            const IdProduct = String(await product.user._id)
 
-        let img;
+
+            if( IdUser !== IdProduct){
+            return res.status(400).json({message: "Usuario invalido"})
+            }
+            
+            let img;
+            
 
         if(req.file) {
             img = req.file.filename
         }
-
-
-         const user = await getUserByToken(token)
-         const IdUser = String(await user._id)
-         
-         const product = await Product.findOne({_id: idProduct})
-         const IdProduct = String(await product.user._id);
-
-        //Validação se id do usuario no produto bate com o id amazenado no token
-
-        if(IdUser !== IdProduct) {
-            res.status(401).json({message: "Token invalido"})
-           return
-        }
-
 
         const {name, price, stock, description } = req.body
 
@@ -134,53 +132,29 @@ module.exports = class ProductController {
         }
 
         product.description = description
-
         try {
-            await Product.findOneAndUpdate(
-                {_id: idProduct},
+              await Product.findOneAndUpdate(
+                {_id: product._id},
                 {$set: product},
                 {new: true}
             )
 
             res.status(200).json({message: "Produto editado com sucesso"})
-
         } catch (error) {
-            res.status(500).json({message: error});
+            res.status(500).json({message: "Algo deu errado"})
         }
-
-   }
+}
 
 
     static async removeProduct(req, res) {
 
-        const id = await verifyId(req,res)
-    //     const token = getToken(req)
-    //     let product = await Product.findOne({_id: id})
-
-    //     const user = await getUserByToken(token)
-    //     const IdUser = String(await user._id)
-        
-        
-    //     const IdProduct = String(await product.user._id);
-
-    //    //Validação se id do usuario no produto bate com o id amazenado no token
-       
-    //    if(IdUser !== IdProduct) {
-    //        res.status(401).json({message: "Token invalido"})
-    //       return
-    //    }
-
-        // if(!product){
-        //     res.status(422).json({message: "ID invalido"})
-        //     return
-        // }
-
+            const product = await verifyId(req)
 
         try {
-            await Product.deleteOne({_id: id})
+            await Product.deleteOne({_id: product.id})
             res.status(200).json({message: "Produto deletado com sucesso"})
         } catch (error) {
-            res.status(500).json({message: "algo deu errado com o servidor"})
+            res.status(500).json({message: "Não há produtos para voçe deletar"})
         }
         
     }

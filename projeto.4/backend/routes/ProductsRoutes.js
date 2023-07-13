@@ -13,7 +13,7 @@ const { imageUpload } = require ("../helpers/image-update")
 router.post("/register", checkToken,  ProductController.register);
 router.get("/checkproducts", checkToken,ProductController.checkProducts);
 router.patch("/editproduct/:id", checkToken, imageUpload.single("image"),  ProductController.editProduct);
-router.delete("/deleteproduct/:id", checkToken, ProductController.removeProduct)
+router.post("/deleteproduct/:id",  checkToken, ProductController.removeProduct)
 
 
 module.exports = router
