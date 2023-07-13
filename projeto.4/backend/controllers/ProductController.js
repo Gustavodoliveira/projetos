@@ -180,7 +180,7 @@ module.exports = class ProductController {
             await Product.deleteOne({_id: id})
             res.status(200).json({message: "Produto deletado com sucesso"})
         } catch (error) {
-            res.status(500).json({message: "algo deu errado com o serviodr"})
+            res.status(500).json({message: "algo deu errado com o servidor"})
         }
         
     }
